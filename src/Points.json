@@ -1,0 +1,26 @@
+[
+    {
+        "source_ip": "10.1.1.1",
+        "destination_ip": "5.5.5.5",
+        "source_country": "Dubai",
+        "destination_country": "India",
+        "source_latitude": 25.2048,
+        "source_longitude": -55.2708,
+        "destination_latitude": 18.5204,
+        "destination_longitude": -73.8567,
+        "attack_type": "DDOS"
+    },
+    {
+        "source_ip": "10.1.1.1",
+        "destination_ip": "5.5.5.5",
+        "source_country": "United States",
+        "destination_country": "China",
+        "source_latitude": 37.0902,
+        "source_longitude": -95.7129,
+        "destination_latitude": 35.8617,
+        "destination_longitude": 104.1954,
+        "attack_type": "DDOS"
+    }
+
+]
+
