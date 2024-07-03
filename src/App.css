@@ -37,15 +37,15 @@
   }
 }
 
-body {
-  background-color: #006994; /* Background color of the whole page */
+/* body {
+  background-color: #006994; 
   font-family: Arial, sans-serif;
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
   margin: 0;
-}
+} */
 
 .widget-container {
   background-color: #144b7f; /* Dark blue background color */
