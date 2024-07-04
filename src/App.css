@@ -1,3 +1,5 @@
+/* Default CSS */
+
 .App {
   text-align: center;
 }
@@ -37,19 +39,80 @@
   }
 }
 
-/* body {
-  background-color: #006994; 
-  font-family: Arial, sans-serif;
+/* src/Home */
+.full-screen {
+  position: relative;
+  width: 100%;
+  height: 100vh; /* Use 100vh to ensure the div takes up the full viewport height */
+  overflow: hidden;
+}
+
+/* Canvas styling */
+.canvas-container {
+  position: absolute;
+  top: 10px;
+  bottom: 10px;
+  left: 0;
+  right: 0;
+}
+
+
+/* Navbar Styling */
+.navbar {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
-  height: 100vh;
-  margin: 0;
-} */
+  padding: 10px 20px;
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  z-index: 1000; /* Ensure the navbar is above other components */
+}
+
+.navbar-left {
+  display: flex;
+  align-items: center;
+  font-size: 24px;
+  margin-left: 20px;
+  font-weight: bold;
+  color: white;
+  margin-right: 20px;
+}
+
+.navbar-right {
+  background-color: rgba(0, 0, 0, 0.7); /* Slightly transparent black */
+  display: flex;
+  padding: 10px 20px;
+  top: 0;
+  z-index: 1000; 
+  display: flex;
+  margin-right: 10px;
+}
+
+.navbar-link {
+  cursor: pointer;
+  margin-right: 20px;
+  color: white;
+  text-decoration: none;
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+}
+
+.navbar-link:last-child {
+  margin-right: 0;
+}
+
+.navbar-link:hover {
+  text-decoration: underline;
+}
+
+/* Country Widget  */
 
 .widget-container {
   background-color: #144b7f; /* Dark blue background color */
-  padding: 20px;
+  padding: 15px;
   border-radius: 15px;
   width: 250px;
   text-align: center;
@@ -112,3 +175,35 @@ h2 {
 .dropdown-menu li:hover {
   background-color: #e0e0e0;
 }
+
+/* BottomWidget Styling*/
+.bottom-widget {
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgba(0, 0, 0, 0.7); /* Slightly transparent black */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  margin-bottom: 5px;
+}
+
+.widget-item {
+  color: white;
+  margin: 0 15px;
+  cursor: pointer;
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+}
+
+.widget-item:hover {
+  text-decoration: underline;
+}
+
+
+
+

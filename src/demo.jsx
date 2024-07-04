@@ -3,6 +3,7 @@ import * as THREE from 'three';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
 import points from './Points.json';
 import './App.css';
+import BottomWidget from './BottomWidget';
 
 const ThreatMap = () => {
     const canvasRef = useRef(null);
@@ -109,12 +110,25 @@ const ThreatMap = () => {
             camera.position.z = 6.5;
 
             renderer = new THREE.WebGLRenderer({ canvas: canvasRef.current });
-            renderer.setClearColor(0x87ceeb); // Sky blue color
+            renderer.setClearColor(0x0000); // Sky blue color
             renderer.setSize(window.innerWidth, window.innerHeight);
+            renderer.setPixelRatio(window.devicePixelRatio);
+            renderer.antialias = true;
 
             const earthGeometry = new THREE.SphereGeometry(4, 32, 32);
             const loader = new THREE.TextureLoader();
-            const earthTexture = loader.load('https://threejs.org/examples/textures/planets/earth_atmos_2048.jpg');
+            const earthTexture = loader.load('https://unpkg.com/three-globe@2.31.1/example/img/earth-blue-marble.jpg');
+            // const earthTexture = loader.load('https://unpkg.com/three-globe@2.31.1/example/img/earth-night.jpg');
+            // const earthTexture = loader.load('https://unpkg.com/three-globe@2.31.1/example/img/earth-day.jpg');
+            // const earthTexture = loader.load('https://unpkg.com/three-globe@2.31.1/example/img/earth-dark.jpg');
+
+
+
+            earthTexture.minFilter = THREE.LinearFilter;
+            earthTexture.magFilter = THREE.LinearFilter;
+            earthTexture.wrapS = THREE.ClampToEdgeWrapping;
+            earthTexture.wrapT = THREE.ClampToEdgeWrapping;
+
             const earthMaterial = new THREE.MeshBasicMaterial({ map: earthTexture });
             earthMesh = new THREE.Mesh(earthGeometry, earthMaterial);
             scene.add(earthMesh);
@@ -153,8 +167,8 @@ const ThreatMap = () => {
     }, []);
 
     return (
-        <div style={{ position: 'relative', width: '100%', height: '96.5vh', overflow: 'hidden' }}>
-            <div style={{ position: 'absolute', top: 10, left: 10,  padding: '20px', overflowY: 'auto', boxSizing: 'border-box' }}>
+        <div className="full-screen">
+            <div style={{ position: 'absolute', top: 30, left: 10,  padding: '20px', overflowY: 'auto', boxSizing: 'border-box' }}>
                 <div className="widget-container">
                     <h2>TOP TARGETED COUNTRIES</h2>
                     {topCountries.map((item, index) => (
@@ -162,7 +176,8 @@ const ThreatMap = () => {
                     ))}
                 </div>
             </div>
-            <canvas ref={canvasRef} style={{ width: '100%', height: '100%' }} />
+            <canvas ref={canvasRef} style={{ width: '100%', height: '100%'}} />
+            <BottomWidget />
         </div>
     );
 };
