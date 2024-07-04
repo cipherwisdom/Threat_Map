@@ -1,13 +1,13 @@
 [
     {
-        "source_ip": "10.1.1.1",
-        "destination_ip": "5.5.5.5",
+        "source_ip": "5.5.5.5",
+        "destination_ip": "10.1.1.1",
         "source_country": "Dubai",
         "destination_country": "India",
-        "source_latitude": 25.2048,
-        "source_longitude": -55.2708,
-        "destination_latitude": 18.5204,
-        "destination_longitude": -73.8567,
+        "source_latitude": 18.5204,
+        "source_longitude": -73.8567,
+        "destination_latitude": 25.2048,
+        "destination_longitude": -55.2708,
         "attack_type": "DDOS"
     },
     {
