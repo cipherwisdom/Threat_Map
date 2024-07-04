@@ -44,7 +44,7 @@ const styles = {
   title: {
     fontSize: '44px',
     fontWeight: 'bold',
-    color: '#aec3d6', // Set the color to blue
+    color: '#007bff', // Set the color to blue
     textAlign: 'center', // Align the text to the middle
     marginTop: '16px', // Add some top margin for spacing
     textDecorationLine: 'underline',
