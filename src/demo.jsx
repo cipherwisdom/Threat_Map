@@ -27,16 +27,11 @@ const ThreatMap = () => {
     useEffect(() => {
         // Dummy data for top ten countries (replace with actual data)
         setTopCountries([
-            { country: 'Country 1', value: 100 },
-            { country: 'Country 2', value: 90 },
-            { country: 'Country 3', value: 80 },
-            { country: 'Country 4', value: 70 },
-            { country: 'Country 5', value: 60 },
-            { country: 'Country 6', value: 50 },
-            { country: 'Country 7', value: 40 },
-            { country: 'Country 8', value: 30 },
-            { country: 'Country 9', value: 20 },
-            { country: 'Country 10', value: 10 },
+            { country: 'United Arab Emirates', value: 100 },
+            { country: 'Egypt', value: 90 },
+            { country: 'Saudi Arabia', value: 80 },
+            { country: 'Lebanon', value: 70 },
+            { country: 'Qatar', value: 60 },
         ]);
     }, []);
 
@@ -117,8 +112,6 @@ const ThreatMap = () => {
         return { x, y, z };
     };
     
-    
-    
 
     useEffect(() => {
         const init = () => {
@@ -185,7 +178,7 @@ const ThreatMap = () => {
 
     return (
         <div className="full-screen">
-            <div style={{ position: 'absolute', top: 30, left: 10,  padding: '20px', overflowY: 'auto', boxSizing: 'border-box' }}>
+            <div style={{ position: 'absolute', top: 100, left: 20,  padding: '20px', overflowY: 'auto', boxSizing: 'border-box' }}>
                 <div className="widget-container">
                     <h2>TOP TARGETED COUNTRIES</h2>
                     {topCountries.map((item, index) => (
