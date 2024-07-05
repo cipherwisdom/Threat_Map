@@ -39,6 +39,7 @@ const TrendsPage = () => {
 
 const styles = {
   container: {
+    marginTop: '10px',
     padding: '16px',
   },
   title: {

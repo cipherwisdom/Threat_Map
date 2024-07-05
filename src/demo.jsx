@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import * as THREE from 'three';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
-// import points from './Points.json';
+import points from './Points.json';
 import axios from 'axios'
 import './App.css';
 import BottomWidget from './BottomWidget';
@@ -10,19 +10,19 @@ const ThreatMap = () => {
     const canvasRef = useRef(null);
     const [topCountries, setTopCountries] = useState([]);
     let scene, camera, renderer, earthMesh, pointMeshes = [], arrowMeshes = [];
-    const [points, setPoints] = useState([]);
+    // const [points, setPoints] = useState([]);
 
-    useEffect(() => {
-        // Fetch data from the API
-        axios.get('http://127.0.0.1:5000/api/ip-info')
-            .then(response => {
-                setPoints(response.data);
-                 console.log('Fetched data:', response.data);
-            })
-            .catch(error => {
-                console.error('There was an error fetching the data!', error);
-            });
-    }, []);
+    // useEffect(() => {
+    //     // Fetch data from the API
+    //     axios.get('http://127.0.0.1:5000/api/ip-info')
+    //         .then(response => {
+    //             setPoints(response.data);
+    //              console.log('Fetched data:', response.data);
+    //         })
+    //         .catch(error => {
+    //             console.error('There was an error fetching the data!', error);
+    //         });
+    // }, []);
 
     useEffect(() => {
         // Dummy data for top ten countries (replace with actual data)

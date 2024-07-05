@@ -3,8 +3,9 @@ import React from 'react';
 const ThreatInsights = () => {
   const styles = {
     container: {
+      marginTop: '10px',
       fontFamily: 'Arial, sans-serif',
-      margin: '20px'
+      margin: '40px'
     },
     heading: {
       color: '#007bff',

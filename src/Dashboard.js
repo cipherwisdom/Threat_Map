@@ -55,7 +55,7 @@ const Dashboard = () => {
     ];
 
     return (
-        <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'space-around' }}>
+        <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'space-around', marginTop: '40px'}}>
             <div style={{ width: '30%', marginBottom: '20px' }}>
                 <h3>Pie Chart</h3>
                 <PieChart width={400} height={400}>

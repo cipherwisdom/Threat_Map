@@ -22,6 +22,7 @@ const AdvisoryDetail = ({ advisory, creator, onBack }) => {
 
 const styles = {
   container: {
+    marginTop: '60px',
     padding: '16px',
     backgroundColor: '#f5f5f5',
   },
