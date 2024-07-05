@@ -13,8 +13,8 @@ const App = () => {
       <Navbar /> {/* Include your Navbar component for navigation */}
       <Routes>
         <Route path="/" element={<ThreatMap />} />
-        <Route path="/map" element={<ThreatMap />} /> {/* Consider combining these routes if they serve the same purpose */}
-        <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="/map" element={<ThreatMap />} /> 
+        {/* <Route path="/dashboard" element={<Dashboard />} /> */}
         <Route path="/trends" element={<TrendsPage />} /> {/* Use your TrendsPage component */}
         <Route path="/trends/:advisoryId" element={<AdvisoryDetailWrapper />} />
         <Route path="/insights" element={<ThreatInsights/>} /> {/* Placeholder for future implementation */}
