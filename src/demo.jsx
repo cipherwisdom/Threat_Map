@@ -1,15 +1,28 @@
 import React, { useEffect, useRef, useState } from 'react';
 import * as THREE from 'three';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
-import points from './Points.json';
+// import points from './Points.json';
+import axios from 'axios'
 import './App.css';
 import BottomWidget from './BottomWidget';
 
 const ThreatMap = () => {
     const canvasRef = useRef(null);
     const [topCountries, setTopCountries] = useState([]);
-
     let scene, camera, renderer, earthMesh, pointMeshes = [], arrowMeshes = [];
+    const [points, setPoints] = useState([]);
+
+    useEffect(() => {
+        // Fetch data from the API
+        axios.get('http://127.0.0.1:5000/api/ip-info')
+            .then(response => {
+                setPoints(response.data);
+                 console.log('Fetched data:', response.data);
+            })
+            .catch(error => {
+                console.error('There was an error fetching the data!', error);
+            });
+    }, []);
 
     useEffect(() => {
         // Dummy data for top ten countries (replace with actual data)
@@ -56,18 +69,18 @@ const ThreatMap = () => {
         const sourceMaterial = new THREE.MeshBasicMaterial({ color: 0x00ff00 }); // Green for source
         const destinationMaterial = new THREE.MeshBasicMaterial({ color: 0xff0000 }); // Red for destination
         const arrowMaterial = new THREE.MeshBasicMaterial({ color: 0x0000ff }); // Blue for arrow
-
+    
         points.forEach(({ source_latitude, source_longitude, destination_latitude, destination_longitude }) => {
             const sourcePoint = new THREE.Mesh(pointGeometry, sourceMaterial);
             const { x: sourceX, y: sourceY, z: sourceZ } = calculatePointCoordinates(source_longitude, source_latitude);
             sourcePoint.position.set(sourceX, sourceY, sourceZ);
             scene.add(sourcePoint);
-
+    
             const destinationPoint = new THREE.Mesh(pointGeometry, destinationMaterial);
             const { x: destinationX, y: destinationY, z: destinationZ } = calculatePointCoordinates(destination_longitude, destination_latitude);
             destinationPoint.position.set(destinationX, destinationY, destinationZ);
             scene.add(destinationPoint);
-
+    
             // Create animated arrow curve
             const curvePoints = [];
             const steps = 100;
@@ -80,7 +93,7 @@ const ThreatMap = () => {
                 ).normalize().multiplyScalar(2.011); // Slightly above the surface to avoid clipping
                 curvePoints.push(point);
             }
-
+    
             const curve = new THREE.CatmullRomCurve3(curvePoints);
             const tubeGeometry = new THREE.TubeGeometry(curve, 64, 0.011, 8, false); // Larger tube geometry
             const arrowMesh = new THREE.Mesh(tubeGeometry, arrowMaterial);
@@ -88,13 +101,14 @@ const ThreatMap = () => {
             arrowMesh.t = 0; // Initial animation parameter
             arrowMeshes.push(arrowMesh);
             scene.add(arrowMesh);
-
+    
             pointMeshes.push(sourcePoint, destinationPoint);
         });
     };
+    
 
     const calculatePointCoordinates = (lon, lat) => {
-        const lonRad = lon * (Math.PI / 180);
+        const lonRad = -lon * (Math.PI / 180); // Invert longitude sign
         const latRad = lat * (Math.PI / 180);
         const radius = 4;
         const x = radius * Math.cos(latRad) * Math.cos(lonRad);
@@ -102,12 +116,15 @@ const ThreatMap = () => {
         const z = radius * Math.cos(latRad) * Math.sin(lonRad);
         return { x, y, z };
     };
+    
+    
+    
 
     useEffect(() => {
         const init = () => {
             scene = new THREE.Scene();
             camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-            camera.position.z = 6.5;
+            camera.position.set(4, 2, -5);
 
             renderer = new THREE.WebGLRenderer({ canvas: canvasRef.current });
             renderer.setClearColor(0x0000); // Sky blue color
@@ -164,7 +181,7 @@ const ThreatMap = () => {
             pointMeshes.forEach(mesh => scene.remove(mesh));
             arrowMeshes.forEach(mesh => scene.remove(mesh));
         };
-    }, []);
+    }, [points]);
 
     return (
         <div className="full-screen">
