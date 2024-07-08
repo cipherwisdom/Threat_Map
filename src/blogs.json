@@ -1,0 +1,19 @@
+[
+    {
+      "id": 1,
+      "authorName": "Pawan Ambhore",
+      "authorAvatar": "/images/dubai.jpg",
+      "title": "Understanding IB Attacks and CI Attacks",
+      "description": "In the world of cybersecurity, it is crucial to understand the different types of attacks...",
+      "date": "Feb 14"
+    },
+    {
+      "id": 2,
+      "authorName": "Pawan Ambhore",
+      "authorAvatar": "/images/dubai.jpg",
+      "title": "Second Blog",
+      "description": "This is the description of the second blog.",
+      "date": "Jan 26"
+    }
+  ]
+  

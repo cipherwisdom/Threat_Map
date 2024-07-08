@@ -5,11 +5,17 @@ import points from './Points.json';
 import axios from 'axios'
 import './App.css';
 import BottomWidget from './BottomWidget';
+import countries from './topCountries.json';
 
 const ThreatMap = () => {
     const canvasRef = useRef(null);
-    const [topCountries, setTopCountries] = useState([]);
+    // const [topCountries, setTopCountries] = useState([]);
     let scene, camera, renderer, earthMesh, pointMeshes = [], arrowMeshes = [];
+    const [topCountries, setTopCountries] = useState([]);
+
+    useEffect(() => {
+      setTopCountries(countries); // Load data from JSON file
+    }, []);
     // const [points, setPoints] = useState([]);
 
     // useEffect(() => {
@@ -24,40 +30,57 @@ const ThreatMap = () => {
     //         });
     // }, []);
 
-    useEffect(() => {
-        // Dummy data for top ten countries (replace with actual data)
-        setTopCountries([
-            { country: 'United Arab Emirates', value: 100 },
-            { country: 'Egypt', value: 90 },
-            { country: 'Saudi Arabia', value: 80 },
-            { country: 'Lebanon', value: 70 },
-            { country: 'Qatar', value: 60 },
-        ]);
-    }, []);
+    // useEffect(() => {
+    //     // Dummy data for top ten countries (replace with actual data)
+    //     setTopCountries([
+    //         { country: 'United Arab Emirates', value: 100 },
+    //         { country: 'Egypt', value: 90 },
+    //         { country: 'Saudi Arabia', value: 80 },
+    //         { country: 'Lebanon', value: 70 },
+    //         { country: 'Qatar', value: 60 },
+    //     ]);
+    // }, []);
 
-    const Dropdown = ({ country }) => {
-        const [isOpen, setIsOpen] = useState(false);
+    // useEffect(() => {
+    //     fetch('/topCountries.json')
+    //       .then(response => {
+    //         if (!response.ok) {
+    //           throw new Error('Network response was not ok ' + response.statusText);
+    //         }
+    //         return response.json();
+    //       })
+    //       .then(data => {
+    //         console.log('Fetched top countries:', data); // Log fetched data
+    //         setTopCountries(data);
+    //       })
+    //       .catch(error => {
+    //         console.error('There was an error fetching the top countries!', error);
+    //       });
+    //   }, []);
 
-        const toggleDropdown = () => {
-            setIsOpen(!isOpen);
-        };
+    // const Dropdown = ({ country }) => {
+    //     const [isOpen, setIsOpen] = useState(false);
 
-        return (
-            <div className="dropdown">
-                <button className="dropdown-toggle" onClick={toggleDropdown}>
-                    {country}
-                    <span className={`arrow ${isOpen ? 'open' : ''}`}>▼</span>
-                </button>
-                {isOpen && (
-                    <ul className="dropdown-menu">
-                        <li>Option 1</li>
-                        <li>Option 2</li>
-                        <li>Option 3</li>
-                    </ul>
-                )}
-            </div>
-        );
-    };
+    //     const toggleDropdown = () => {
+    //         setIsOpen(!isOpen);
+    //     };
+
+        // return (
+        //     <div className="dropdown">
+        //         <button className="dropdown-toggle" onClick={toggleDropdown}>
+        //             {country}
+        //             <span className={`arrow ${isOpen ? 'open' : ''}`}>▼</span>
+        //         </button>
+        //         {isOpen && (
+        //             <ul className="dropdown-menu">
+        //                 <li>Option 1</li>
+        //                 <li>Option 2</li>
+        //                 <li>Option 3</li>
+        //             </ul>
+        //         )}
+        //     </div>
+        // );
+    // };
 
     const plotPoints = () => {
         const pointGeometry = new THREE.SphereGeometry(0.0276, 16, 16);
@@ -178,17 +201,27 @@ const ThreatMap = () => {
 
     return (
         <div className="full-screen">
-            <div style={{ position: 'absolute', top: 100, left: 20,  padding: '20px', overflowY: 'auto', boxSizing: 'border-box' }}>
-                <div className="widget-container">
-                    <h2>TOP TARGETED COUNTRIES</h2>
-                    {topCountries.map((item, index) => (
-                        <Dropdown key={index} country={item.country} />
-                    ))}
-                </div>
-            </div>
-            <canvas ref={canvasRef} style={{ width: '100%', height: '100%'}} />
-            <BottomWidget />
+        <div style={{ position: 'absolute', top: 100, left: 20, padding: '20px', overflowY: 'auto', boxSizing: 'border-box' }}>
+        <div className="country-container">
+  <h2>TOP TARGETED COUNTRIES</h2>
+  <ul>
+    {topCountries.map((item, index) => {
+      console.log(item.country); // Log the country name
+      return (
+        <li key={index} className={`country-item ${item.country.toLowerCase().replace(/ /g, '-')}`}>
+          <img src={item.flag} alt={`${item.country} Flag`} />
+          <span>{item.country}</span>
+          <span>{item.region}</span>
+        </li>
+      );
+    })}
+  </ul>
+</div>
+
         </div>
+        <canvas ref={canvasRef} style={{ width: '100%', height: '100%' }} />
+        <BottomWidget />
+      </div>
     );
 };
 

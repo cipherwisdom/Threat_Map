@@ -1,0 +1,21 @@
+[
+    {
+      "id": 1,
+      "name": "Advisory 1",
+      "shortDescription": "Short description here",
+      "fullDescription": "Full description of Advisory 1"
+    },
+    {
+      "id": 2,
+      "name": "Advisory 2",
+      "shortDescription": "Short description here",
+      "fullDescription": "Full description of Advisory 2"
+    },
+    {
+      "id": 3,
+      "name": "Advisory 3",
+      "shortDescription": "Short description here",
+      "fullDescription": "Full description of Advisory 3"
+    }
+  ]
+  
