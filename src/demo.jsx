@@ -16,6 +16,10 @@ const ThreatMap = () => {
     useEffect(() => {
       setTopCountries(countries); // Load data from JSON file
     }, []);
+
+    const handleClick = () => {
+      window.open('https://www.rnstechnology.com/', '_blank');
+    };
     // const [points, setPoints] = useState([]);
 
     // useEffect(() => {
@@ -219,6 +223,23 @@ const ThreatMap = () => {
 </div>
 
         </div>
+        <div
+      style={{
+        position: 'absolute',
+        bottom: '20px', // Adjust position as needed
+        right: '20px', // Adjust position as needed
+        padding: '10px',
+        backgroundColor: '#f0f0f0',
+        border: '1px solid #ccc',
+        borderRadius: '5px',
+        cursor: 'pointer',
+        zIndex: 1000, // Ensure it's above other content
+      }}
+      onClick={handleClick}
+    >
+      Protect Yourself! <br />
+      Explore our cybersecurity solutions.
+    </div>
         <canvas ref={canvasRef} style={{ width: '100%', height: '100%' }} />
         <BottomWidget />
       </div>

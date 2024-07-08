@@ -32,7 +32,7 @@ const BlogDetail = () => {
   return (
     <div className="blog-detail">
       <h1 className="blog-title">{blog.title}</h1>
-      <p className="blog-content">{blog.content}</p>
+      <p className="blog-content">{blog.fulldescription}</p>
     </div>
   );
 };

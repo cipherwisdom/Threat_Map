@@ -66,7 +66,7 @@ const TrendsPage = () => {
 
   return (
     <div className="trends-page">
-      <h2 className="page-title">Advisories</h2>
+      <h2 className="page-title">ADVISORIES</h2>
       <div className="grid-container">
         {advisories.map((advisory) => (
           <AdvisoryWidget 

@@ -1,21 +1,87 @@
 [
     {
       "id": 1,
-      "name": "Advisory 1",
-      "shortDescription": "Short description here",
-      "fullDescription": "Full description of Advisory 1"
+      "name": "Golang-Based Zergeca Botnet Powerful DDoS Attacks",
+      "shortDescription": "The Zergeca botnet, written in Golang, is a sophisticated threat capable of various malicious activities, including DDoS attacks, proxying, scanning, self-upgrading, persistence, file transfer, reverse shell, and data collection. It employs DNS-over-HTTPS (DoH) and the Smux library for secure C2 communications.",
+      "fullDescription": "The Zergeca botnet, written in Golang, is a sophisticated threat capable of various malicious activities, including DDoS attacks, proxying, scanning, self-upgrading, persistence, file transfer, reverse shell, and data collection. It employs DNS-over-HTTPS (DoH) and the Smux library for secure C2 communications. The botnet is linked to the IP address 84.54.51[.]82, previously associated with the Mirai botnet, suggesting that experienced threat actors are behind it. Zergeca has notably targeted Canada, Germany, and the U.S. with ACK flood DDoS attacks between early and mid-June 2024. Zergeca's functionality is divided into four modules: persistence, proxy, silivaccine, and zombie. These modules enable the botnet to establish persistence, implement proxying, remove competing malware, and report sensitive information to its C2 server while supporting various DDoS attacks and other malicious activities. The use of advanced evasion tactics, such as modified UPX packing and XOR encryption, along with its multi-functional capabilities, makes Zergeca a significant and evolving cyber threat.",
+  "recommendations": [
+    "Educate users about cybersecurity best practices, including identifying phishing attempts and avoiding suspicious attachments or links.",
+    "Regularly update all software, including operating systems and applications, to patch vulnerabilities.",
+    "Don’t allow Macros for unknown MSOffice files.",
+    "Ensure that email server is configured to block any suspicious attached files.",
+    "Implement strong authentication methods, such as multi-factor authentication (MFA), for all critical systems and applications.",
+    "Implement a robust backup routine with backups stored offline and regularly tested for recoverability."
+  ]
     },
     {
       "id": 2,
-      "name": "Advisory 2",
-      "shortDescription": "Short description here",
-      "fullDescription": "Full description of Advisory 2"
+      "name": "Volcano Demon Ransomware Threat",
+      "shortDescription": "Researchers have identified a new ransomware threat actor named “Volcano Demon”, responsible for recent attacks utilizing the LukaLocker encryptor. This group has carried out several successful attacks in the past two weeks, locking both Windows, Linux workstations and servers by exploiting common administrative credentials.",
+      "fullDescription": "Researchers have identified a new ransomware threat actor named “Volcano Demon”, responsible for recent attacks utilizing the LukaLocker encryptor. This group has carried out several successful attacks in the past two weeks, locking both Windows, Linux workstations and servers by exploiting common administrative credentials. The attacker first exfiltrates data to C2 servers, following which the files are encrypted with a “.nba” file extension. The attack vector includes common administrative credentials harvested from the network. The threat actor features no leak site and instead uses threatening phone calls to leadership and IT executives to demand payment.",
+      "recommendations": [
+    "Educate users about cybersecurity best practices, including identifying phishing attempts and avoiding suspicious attachments or links.",
+    "Regularly update all software, including operating systems and applications, to patch vulnerabilities.",
+    "Don’t allow Macros for unknown MSOffice files.",
+    "Ensure that email server is configured to block any suspicious attached files.",
+    "Implement strong authentication methods, such as multi-factor authentication (MFA), for all critical systems and applications.",
+    "Implement a robust backup routine with backups stored offline and regularly tested for recoverability."
+  ]
     },
     {
       "id": 3,
-      "name": "Advisory 3",
-      "shortDescription": "Short description here",
-      "fullDescription": "Full description of Advisory 3"
+      "name": "Chinese Hackers Exploiting Cisco Switches Zero-Day to Deliver Malware",
+      "shortDescription": "A vulnerability in the CLI of Cisco NX-OS Software was identified after a Chinese-nexus cyber espionage group named Velvet Ant exploited this zero-day flaw in Cisco NX-OS Software used in its switches, to deliver a malware.",
+      "fullDescription": "A vulnerability in the CLI of Cisco NX-OS Software was identified after a Chinese-nexus cyber espionage group named Velvet Ant exploited this zero-day flaw in Cisco NX-OS Software used in its switches, to deliver a malware. CVE-2024-20399: This vulnerability allows a user with Administrator privileges to execute commands on the underlying operating system without enabling the bash-shell feature and without triggering system syslog messages showing that the user executed the run bash command. This could help a user with Administrator privileges hide the execution of shell commands on the device.",
+      "recommendations": [
+    "Educate users about cybersecurity best practices, including identifying phishing attempts and avoiding suspicious attachments or links.",
+    "Regularly update all software, including operating systems and applications, to patch vulnerabilities.",
+    "Don’t allow Macros for unknown MSOffice files.",
+    "Ensure that email server is configured to block any suspicious attached files.",
+    "Implement strong authentication methods, such as multi-factor authentication (MFA), for all critical systems and applications.",
+    "Implement a robust backup routine with backups stored offline and regularly tested for recoverability."
+  ]
+    },
+    {
+      "id": 4,
+      "name": "Golang-Based Zergeca Botnet Powerful DDoS Attacks",
+      "shortDescription": "The Zergeca botnet, written in Golang, is a sophisticated threat capable of various malicious activities, including DDoS attacks, proxying, scanning, self-upgrading, persistence, file transfer, reverse shell, and data collection. It employs DNS-over-HTTPS (DoH) and the Smux library for secure C2 communications.",
+      "fullDescription": "The Zergeca botnet, written in Golang, is a sophisticated threat capable of various malicious activities, including DDoS attacks, proxying, scanning, self-upgrading, persistence, file transfer, reverse shell, and data collection. It employs DNS-over-HTTPS (DoH) and the Smux library for secure C2 communications. The botnet is linked to the IP address 84.54.51[.]82, previously associated with the Mirai botnet, suggesting that experienced threat actors are behind it. Zergeca has notably targeted Canada, Germany, and the U.S. with ACK flood DDoS attacks between early and mid-June 2024. Zergeca's functionality is divided into four modules: persistence, proxy, silivaccine, and zombie. These modules enable the botnet to establish persistence, implement proxying, remove competing malware, and report sensitive information to its C2 server while supporting various DDoS attacks and other malicious activities. The use of advanced evasion tactics, such as modified UPX packing and XOR encryption, along with its multi-functional capabilities, makes Zergeca a significant and evolving cyber threat.",
+  "recommendations": [
+    "Educate users about cybersecurity best practices, including identifying phishing attempts and avoiding suspicious attachments or links.",
+    "Regularly update all software, including operating systems and applications, to patch vulnerabilities.",
+    "Don’t allow Macros for unknown MSOffice files.",
+    "Ensure that email server is configured to block any suspicious attached files.",
+    "Implement strong authentication methods, such as multi-factor authentication (MFA), for all critical systems and applications.",
+    "Implement a robust backup routine with backups stored offline and regularly tested for recoverability."
+  ]
+    },
+    {
+      "id": 5,
+      "name": "Volcano Demon Ransomware Threat",
+      "shortDescription": "Researchers have identified a new ransomware threat actor named “Volcano Demon”, responsible for recent attacks utilizing the LukaLocker encryptor. This group has carried out several successful attacks in the past two weeks, locking both Windows, Linux workstations and servers by exploiting common administrative credentials.",
+      "fullDescription": "Researchers have identified a new ransomware threat actor named “Volcano Demon”, responsible for recent attacks utilizing the LukaLocker encryptor. This group has carried out several successful attacks in the past two weeks, locking both Windows, Linux workstations and servers by exploiting common administrative credentials. The attacker first exfiltrates data to C2 servers, following which the files are encrypted with a “.nba” file extension. The attack vector includes common administrative credentials harvested from the network. The threat actor features no leak site and instead uses threatening phone calls to leadership and IT executives to demand payment.",
+      "recommendations": [
+    "Educate users about cybersecurity best practices, including identifying phishing attempts and avoiding suspicious attachments or links.",
+    "Regularly update all software, including operating systems and applications, to patch vulnerabilities.",
+    "Don’t allow Macros for unknown MSOffice files.",
+    "Ensure that email server is configured to block any suspicious attached files.",
+    "Implement strong authentication methods, such as multi-factor authentication (MFA), for all critical systems and applications.",
+    "Implement a robust backup routine with backups stored offline and regularly tested for recoverability."
+  ]
+    },
+    {
+      "id": 6,
+      "name": "Chinese Hackers Exploiting Cisco Switches Zero-Day to Deliver Malware",
+      "shortDescription": "A vulnerability in the CLI of Cisco NX-OS Software was identified after a Chinese-nexus cyber espionage group named Velvet Ant exploited this zero-day flaw in Cisco NX-OS Software used in its switches, to deliver a malware.",
+      "fullDescription": "A vulnerability in the CLI of Cisco NX-OS Software was identified after a Chinese-nexus cyber espionage group named Velvet Ant exploited this zero-day flaw in Cisco NX-OS Software used in its switches, to deliver a malware. CVE-2024-20399: This vulnerability allows a user with Administrator privileges to execute commands on the underlying operating system without enabling the bash-shell feature and without triggering system syslog messages showing that the user executed the run bash command. This could help a user with Administrator privileges hide the execution of shell commands on the device.",
+      "recommendations": [
+    "Educate users about cybersecurity best practices, including identifying phishing attempts and avoiding suspicious attachments or links.",
+    "Regularly update all software, including operating systems and applications, to patch vulnerabilities.",
+    "Don’t allow Macros for unknown MSOffice files.",
+    "Ensure that email server is configured to block any suspicious attached files.",
+    "Implement strong authentication methods, such as multi-factor authentication (MFA), for all critical systems and applications.",
+    "Implement a robust backup routine with backups stored offline and regularly tested for recoverability."
+  ]
     }
   ]
   

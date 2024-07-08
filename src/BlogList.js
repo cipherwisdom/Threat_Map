@@ -12,6 +12,7 @@ const BlogList = () => {
 
   return (
     <div className="blog-list">
+      <h2 className="page-title">THREAT INSIGHTS</h2>
       {blogList.map((blog) => (
         <div key={blog.id} className="blog-list-item">
           <div className="author-info">
@@ -20,7 +21,7 @@ const BlogList = () => {
           </div>
           <Link to={`/insights/${blog.id}`} className="blog-link">
             <h2 className="blog-title">{blog.title}</h2>
-            <p className="blog-description">{blog.description}</p>
+            <p className="blog-description">{blog.shortDescription}</p>
           </Link>
           <div className="blog-footer">
             <span className="blog-date">{blog.date}</span>
