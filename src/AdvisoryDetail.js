@@ -9,7 +9,7 @@ const AdvisoryDetail = ({ advisory, creator, onBack }) => {
   return (
     <div className="adv-detailspage">
       <button onClick={onBack} className="backButton">Back</button>
-      <h2 className="advisoryName">{advisory.name}</h2>
+      {/* <h2 className="advisoryName">{advisory.name}</h2> */}
       <div className="fullDescription" dangerouslySetInnerHTML={{ __html: advisory.fullDescription }} />
       {creator && (
         <div className="creatorDetails">
