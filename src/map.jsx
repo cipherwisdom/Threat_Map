@@ -9,9 +9,9 @@ import countries from './topCountries.json';
 
 const ThreatMap = () => {
     const canvasRef = useRef(null);
-    // const [topCountries, setTopCountries] = useState([]);
     let scene, camera, renderer, earthMesh, pointMeshes = [], arrowMeshes = [];
     const [topCountries, setTopCountries] = useState([]);
+    // const [points, setPoints] = useState([]);
 
     useEffect(() => {
       setTopCountries(countries); // Load data from JSON file
@@ -20,7 +20,6 @@ const ThreatMap = () => {
     const handleClick = () => {
       window.open('https://www.rnstechnology.com/', '_blank');
     };
-    // const [points, setPoints] = useState([]);
 
     // useEffect(() => {
     //     // Fetch data from the API
@@ -34,57 +33,6 @@ const ThreatMap = () => {
     //         });
     // }, []);
 
-    // useEffect(() => {
-    //     // Dummy data for top ten countries (replace with actual data)
-    //     setTopCountries([
-    //         { country: 'United Arab Emirates', value: 100 },
-    //         { country: 'Egypt', value: 90 },
-    //         { country: 'Saudi Arabia', value: 80 },
-    //         { country: 'Lebanon', value: 70 },
-    //         { country: 'Qatar', value: 60 },
-    //     ]);
-    // }, []);
-
-    // useEffect(() => {
-    //     fetch('/topCountries.json')
-    //       .then(response => {
-    //         if (!response.ok) {
-    //           throw new Error('Network response was not ok ' + response.statusText);
-    //         }
-    //         return response.json();
-    //       })
-    //       .then(data => {
-    //         console.log('Fetched top countries:', data); // Log fetched data
-    //         setTopCountries(data);
-    //       })
-    //       .catch(error => {
-    //         console.error('There was an error fetching the top countries!', error);
-    //       });
-    //   }, []);
-
-    // const Dropdown = ({ country }) => {
-    //     const [isOpen, setIsOpen] = useState(false);
-
-    //     const toggleDropdown = () => {
-    //         setIsOpen(!isOpen);
-    //     };
-
-        // return (
-        //     <div className="dropdown">
-        //         <button className="dropdown-toggle" onClick={toggleDropdown}>
-        //             {country}
-        //             <span className={`arrow ${isOpen ? 'open' : ''}`}>▼</span>
-        //         </button>
-        //         {isOpen && (
-        //             <ul className="dropdown-menu">
-        //                 <li>Option 1</li>
-        //                 <li>Option 2</li>
-        //                 <li>Option 3</li>
-        //             </ul>
-        //         )}
-        //     </div>
-        // );
-    // };
 
     const plotPoints = () => {
         const pointGeometry = new THREE.SphereGeometry(0.0276, 16, 16);
@@ -159,8 +107,6 @@ const ThreatMap = () => {
             // const earthTexture = loader.load('https://unpkg.com/three-globe@2.31.1/example/img/earth-day.jpg');
             // const earthTexture = loader.load('https://unpkg.com/three-globe@2.31.1/example/img/earth-dark.jpg');
 
-
-
             earthTexture.minFilter = THREE.LinearFilter;
             earthTexture.magFilter = THREE.LinearFilter;
             earthTexture.wrapS = THREE.ClampToEdgeWrapping;
@@ -207,32 +153,28 @@ const ThreatMap = () => {
         <div className="full-screen">
         <div style={{ position: 'absolute', top: 80, left: 20, padding: '20px', overflowY: 'auto', boxSizing: 'border-box' }}>
         <div className="country-container">
-  <h2>TOP TARGETED COUNTRIES</h2>
-  <ul>
-    {topCountries.map((item, index) => {
-      console.log(item.country); // Log the country name
-      return (
-        <li key={index} className={`country-item ${item.country.toLowerCase().replace(/ /g, '-')}`}>
-          <img src={item.flag} alt={`${item.country} Flag`} />
-          <span>{item.country}</span>
-          <span>{item.region}</span>
-        </li>
-      );
-    })}
-  </ul>
-</div>
-
+            <h2>TOP TARGETED COUNTRIES</h2> 
+              <ul>
+              {topCountries.map((item, index) => {
+                console.log(item.country); // Log the country name
+                return (
+                  <li key={index} className={`country-item ${item.country.toLowerCase().replace(/ /g, '-')}`}>
+                    <img src={item.flag} alt={`${item.country} Flag`} />
+                    <span>{item.country}</span>
+                    <span>{item.region}</span>
+                  </li>
+                );
+              })}
+             </ul>
         </div>
-        <div
-     class="website-widget"
-      onClick={handleClick}
-    >
-      Protect Yourself! <br />
-      Explore our cybersecurity solutions.
-    </div>
+        </div>
+        <div class="website-widget" onClick={handleClick}>
+          Protect Yourself! <br />
+          Explore our cybersecurity solutions.
+        </div>
         <canvas ref={canvasRef} style={{ width: '100%', height: '100%' }} />
         <BottomWidget />
-      </div>
+        </div>
     );
 };
 

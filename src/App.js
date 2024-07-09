@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-dom';
 import Navbar from './Navbar';
 import Dashboard from './Dashboard'; // Import your Dashboard component
-import ThreatMap from './demo'; // Assuming ThreatMap is a placeholder
+import ThreatMap from './map'; // Assuming ThreatMap is a placeholder
 // import TrendsPage from './TrendsPage';
 import AdvisoryDetailWrapper from './AdvisoryDetailWrapper'; // Import the AdvisoryDetailWrapper component
 import ThreatInsights from './ThreatInsights';
