@@ -272,40 +272,6 @@ h2 {
   font-size: 18px;
 }  */
 
-/* Advisory Styling */
-.advisoryWidget {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  height: 250px;
-  width: 100%;
-  padding: 16px;
-  background-color: #aec3d6;
-  border-radius: 15px;
-  cursor: pointer;
-  margin: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  text-align: left;
-  color: #fff;
-}
-
-.advisoryName {
-  font-size: 20px;
-  font-weight: bold;
-  margin-bottom: 16px;
-}
-
-.advisoryDetails {
-  display: flex;
-  flex-direction: column;
-  gap: 8px; /* Add spacing between details */
-}
-
-.affectedTechnology,
-.description {
-  font-size: 16px;
-}
-
 /* Trens CSS */
 /* App.css */
 
@@ -329,6 +295,7 @@ h2 {
   justify-content: space-between;
 }
 
+/* advisory Widget */
 .advisoryWidget {
   display: flex;
   flex-direction: column;
@@ -336,13 +303,13 @@ h2 {
   height: 250px;
   width: 100%;
   padding: 16px;
-  background-color: #aec3d6;
+  background-color: rgba(57, 150, 238, 0.5);
   border-radius: 15px;
   cursor: pointer;
   margin: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   text-align: left;
-  color: #fff;
+  color: #000000;
 }
 
 .advisoryName {
@@ -369,6 +336,47 @@ h2 {
 .creator-info {
   font-size: 16px;
 }
+
+/* Adv Details Page */
+.adv-detailspage {
+  margin-top: 60px;
+  padding: 16px;
+  /* background-color: #f5f5f5; */
+}
+
+.adv-detailspage .backButton {
+  margin-bottom: 16px;
+  background-color: rgba(57, 150, 238, 0.8); /* Semi-transparent background */
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Proper shadow */
+  transition: background-color 0.3s, box-shadow 0.3s; /* Smooth transitions */
+}
+
+.adv-detailspage .backButton:hover {
+  background-color: rgba(57, 150, 238, 1); /* Solid background on hover */
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2); /* Slightly larger shadow on hover */
+}
+
+.adv-detailspage .advisoryName {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.adv-detailspage .fullDescription {
+  font-size: 16px;
+  margin-top: 8px;
+}
+
+.adv-detailspage .creatorDetails {
+  margin-top: 16px;
+  font-style: italic;
+}
+
+
 
 /* BlogList.css */
 
@@ -463,7 +471,7 @@ h2 {
   padding: 15px;
   max-width: 280px;
   margin: 0 auto;
-  background-color: #aec3d6;
+  background-color: rgba(57, 150, 238, 0.5);
   border-radius: 20px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
@@ -473,7 +481,7 @@ h2 {
   margin-bottom: 20px;
   font-family: 'Arial', sans-serif;
   font-size: 24px;
-  color: #333;
+  color: #ffffff;
 }
 
 .country-container ul {
@@ -524,7 +532,8 @@ h2 {
   top: 110px; /* Adjust position as needed */
   right: 20px; /* Adjust position as needed */
   padding: 20px;
-  background: #aec3d6;
+  background-color: rgba(57, 150, 238, 0.5);
+  color: white;
   border: 1px solid #ccc;
   border-radius: 15px;
   cursor: pointer;

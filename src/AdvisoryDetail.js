@@ -1,5 +1,5 @@
 import React from 'react';
-
+import './App.css'; // Import the CSS file
 
 const AdvisoryDetail = ({ advisory, creator, onBack }) => {
   if (!advisory) {
@@ -7,37 +7,17 @@ const AdvisoryDetail = ({ advisory, creator, onBack }) => {
   }
 
   return (
-    <div style={styles.container}>
-      <button onClick={onBack} style={styles.backButton}>Back</button>
-      {/* <h2 style={styles.advisoryName}>{advisory.name}</h2> */}
-      {/* <p style={styles.fullDescription}>{advisory.fullDescription}</p> */}
-      <div dangerouslySetInnerHTML={{ __html: advisory.fullDescription }} />
+    <div className="adv-detailspage">
+      <button onClick={onBack} className="backButton">Back</button>
+      <h2 className="advisoryName">{advisory.name}</h2>
+      <div className="fullDescription" dangerouslySetInnerHTML={{ __html: advisory.fullDescription }} />
       {creator && (
-        <>
-          <div>Created by: {creator.name} ({creator.role})</div>
-        </>
+        <div className="creatorDetails">
+          Created by: {creator.name} ({creator.role})
+        </div>
       )}
     </div>
   );
-};
-
-const styles = {
-  container: {
-    marginTop: '60px',
-    padding: '16px',
-    backgroundColor: '#f5f5f5',
-  },
-  backButton: {
-    marginBottom: '16px',
-  },
-  advisoryName: {
-    fontSize: '20px',
-    fontWeight: 'bold',
-  },
-  fullDescription: {
-    fontSize: '16px',
-    marginTop: '8px',
-  },
 };
 
 export default AdvisoryDetail;
