@@ -39,8 +39,29 @@ const ThreatMap = () => {
         const sourceMaterial = new THREE.MeshBasicMaterial({ color: 0x00ff00 }); // Green for source
         const destinationMaterial = new THREE.MeshBasicMaterial({ color: 0xff0000 }); // Red for destination
         const arrowMaterial = new THREE.MeshBasicMaterial({ color: 0x0000ff }); // Blue for arrow
+
+        const createTextSprite = (text) => {
+          const canvas = document.createElement('canvas');
+          const context = canvas.getContext('2d');
+          context.font = 'Bold 24px Arial';
+          context.fillStyle = 'rgba(255, 255, 255, 1.0)';
+          context.fillText(text, 0, 24);
+
+          const texture = new THREE.CanvasTexture(canvas);
+          texture.needsUpdate = true;
+          const spriteMaterial = new THREE.SpriteMaterial({ map: texture });
+          const sprite = new THREE.Sprite(spriteMaterial);
+          sprite.scale.set(1, 0.5, 1); // Adjusted sprite scale
+          return sprite;
+      };
+
+      const addLabel = (text, x, y, z, scene) => {
+          const label = createTextSprite(text);
+          label.position.set(x, y, z);
+          scene.add(label);
+      };
     
-        points.forEach(({ source_latitude, source_longitude, destination_latitude, destination_longitude }) => {
+        points.forEach(({ source_latitude, source_longitude, destination_latitude, destination_longitude, source_country, destination_country }) => {
             const sourcePoint = new THREE.Mesh(pointGeometry, sourceMaterial);
             const { x: sourceX, y: sourceY, z: sourceZ } = calculatePointCoordinates(source_longitude, source_latitude);
             sourcePoint.position.set(sourceX, sourceY, sourceZ);
@@ -51,6 +72,12 @@ const ThreatMap = () => {
             destinationPoint.position.set(destinationX, destinationY, destinationZ);
             scene.add(destinationPoint);
     
+             // Add source country name slightly offset
+             addLabel(source_country, sourceX * 1.01, sourceY * 1.01, sourceZ * 1.01, scene);
+
+             // Add destination country name slightly offset
+             addLabel(destination_country, destinationX * 1.01, destinationY * 1.01, destinationZ * 1.01, scene);// Slightly above the point
+
             // Create animated arrow curve
             const curvePoints = [];
             const steps = 100;
