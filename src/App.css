@@ -220,7 +220,7 @@ h2 {
 
 
 /* BlogList.css */
-.blog-list {
+/* .blog-list {
   padding: 20px;
   max-width: 800px;
   margin: 0 auto;
@@ -249,11 +249,11 @@ h2 {
 }
 
 .blog-link:hover {
-  color: #3498db;
-}
+  color: #000000;
+} */
 
 /* BlogDetail.css */
-.blog-detail {
+/* .blog-detail {
   padding: 20px;
   max-width: 800px;
   margin-top: 100px;
@@ -261,16 +261,16 @@ h2 {
 
 .blog-title {
   text-align: center;
-  margin-bottom: 20px;
+  margin-bottom: 100px;
   font-family: 'Arial', sans-serif;
-  font-size: 36px;
+  font-size: 30px;
 }
 
 .blog-content {
   font-family: 'Georgia', serif;
   line-height: 1.6;
   font-size: 18px;
-}
+}  */
 
 /* Advisory Styling */
 .advisoryWidget {
@@ -439,15 +439,16 @@ h2 {
 .blog-detail {
   max-width: 800px;
   margin: 0 auto;
+  margin-top: 80px;
   padding: 20px;
 }
 
 .blog-title {
-  font-size: 36px;
+  font-size: 33px;
   font-weight: bold;
   margin-bottom: 20px;
-  text-decoration: underline;
-  color: #007bff;
+  /* text-decoration: underline; */
+  color: #000000;
 }
 
 .blog-content {
@@ -459,11 +460,11 @@ h2 {
 /* country css */
 
 .country-container {
-  padding: 20px;
-  max-width: 300px;
+  padding: 15px;
+  max-width: 280px;
   margin: 0 auto;
-  background-color: #f9f9f9;
-  border-radius: 8px;
+  background-color: #aec3d6;
+  border-radius: 20px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
@@ -506,7 +507,7 @@ h2 {
 
 .country-container .country-item span {
   font-family: 'Arial', sans-serif;
-  font-size: 16px;
+  font-size: 14px;
   color: #333;
 }
 
@@ -518,3 +519,14 @@ h2 {
   color: #888;
 }
 
+.website-widget {
+  position: absolute;
+  top: 110px; /* Adjust position as needed */
+  right: 20px; /* Adjust position as needed */
+  padding: 20px;
+  background: #aec3d6;
+  border: 1px solid #ccc;
+  border-radius: 15px;
+  cursor: pointer;
+  z-index: 1000; /* Ensure it's above other content */
+}

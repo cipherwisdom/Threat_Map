@@ -1,29 +1,29 @@
 
 [
     {
-      "country": "Aruba",
-      "region": "AMERICAS",
+      "country": "Lebanon",
+      "region": "Middle East",
+      "flag": "/images/lebanon.png"
+    },
+    {
+      "country": "United Arab Emirates",
+      "region": "Middle East",
       "flag": "/images/dubai.jpg"
     },
     {
-      "country": "Anguilla",
-      "region": "AMERICAS",
-      "flag": "/images/dubai.jpg"
+      "country": "Qatar",
+      "region": "Middle East",
+      "flag": "/images/qatar.png"
     },
     {
-      "country": "Andorra",
-      "region": "EUROPE",
-      "flag": "/images/dubai.jpg"
+      "country": "Saudi Arabia",
+      "region": "Middle East",
+      "flag": "/images/saudi.png"
     },
     {
-      "country": "Armenia",
-      "region": "ASIA",
-      "flag": "/images/dubai.jpg"
-    },
-    {
-      "country": "French Southern and Antarctic Lands",
-      "region": "---",
-      "flag": "/images/dubai.jpg"
+      "country": "Egypt",
+      "region": "Africa",
+      "flag": "/images/egypt.png"
     }
   ]
   

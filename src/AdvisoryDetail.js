@@ -9,8 +9,9 @@ const AdvisoryDetail = ({ advisory, creator, onBack }) => {
   return (
     <div style={styles.container}>
       <button onClick={onBack} style={styles.backButton}>Back</button>
-      <h2 style={styles.advisoryName}>{advisory.name}</h2>
-      <p style={styles.fullDescription}>{advisory.fullDescription}</p>
+      {/* <h2 style={styles.advisoryName}>{advisory.name}</h2> */}
+      {/* <p style={styles.fullDescription}>{advisory.fullDescription}</p> */}
+      <div dangerouslySetInnerHTML={{ __html: advisory.fullDescription }} />
       {creator && (
         <>
           <div>Created by: {creator.name} ({creator.role})</div>

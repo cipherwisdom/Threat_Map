@@ -20,7 +20,7 @@ const BlogList = () => {
             <span>{blog.authorName}</span>
           </div>
           <Link to={`/insights/${blog.id}`} className="blog-link">
-            <h2 className="blog-title">{blog.title}</h2>
+            <div className="blog-title">{blog.title}</div>
             <p className="blog-description">{blog.shortDescription}</p>
           </Link>
           <div className="blog-footer">

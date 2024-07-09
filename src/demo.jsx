@@ -205,7 +205,7 @@ const ThreatMap = () => {
 
     return (
         <div className="full-screen">
-        <div style={{ position: 'absolute', top: 100, left: 20, padding: '20px', overflowY: 'auto', boxSizing: 'border-box' }}>
+        <div style={{ position: 'absolute', top: 80, left: 20, padding: '20px', overflowY: 'auto', boxSizing: 'border-box' }}>
         <div className="country-container">
   <h2>TOP TARGETED COUNTRIES</h2>
   <ul>
@@ -224,17 +224,7 @@ const ThreatMap = () => {
 
         </div>
         <div
-      style={{
-        position: 'absolute',
-        bottom: '20px', // Adjust position as needed
-        right: '20px', // Adjust position as needed
-        padding: '10px',
-        backgroundColor: '#f0f0f0',
-        border: '1px solid #ccc',
-        borderRadius: '5px',
-        cursor: 'pointer',
-        zIndex: 1000, // Ensure it's above other content
-      }}
+     class="website-widget"
       onClick={handleClick}
     >
       Protect Yourself! <br />

@@ -32,7 +32,19 @@ const BlogDetail = () => {
   return (
     <div className="blog-detail">
       <h1 className="blog-title">{blog.title}</h1>
-      <p className="blog-content">{blog.fulldescription}</p>
+      <div className="blog-content" dangerouslySetInnerHTML={{ __html: blog.fulldescription }} />
+      <br/>
+      <br/>
+      <div className="author-info">
+            <img src={blog.authorAvatar} alt={blog.authorName} className="author-avatar" />
+            <span>{blog.authorName}</span>
+          </div>
+          <div className="blog-footer">
+            <span className="blog-date">{blog.date}</span>
+            <div className="blog-actions">
+              <span>⋮</span>
+            </div>
+          </div>
     </div>
   );
 };
