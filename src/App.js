@@ -8,6 +8,7 @@ import ThreatInsights from './ThreatInsights';
 import BlogList from './BlogList';
 import BlogDetail from './BlogDetail';
 import TrendsPage from './Trends';
+import FlatMap from './FlatMap';
 
 const App = () => {
   return (
@@ -15,7 +16,7 @@ const App = () => {
       <Navbar /> {/* Include your Navbar component for navigation */}
       <Routes>
         <Route path="/" element={<ThreatMap />} />
-        <Route path="/map" element={<ThreatMap />} />
+        <Route path="/flatmap" element={<FlatMap />} />
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/trends" element={<TrendsPage />} /> {/* Use your TrendsPage component */}
         <Route path="/trends/:advisoryId" element={<AdvisoryDetailWrapper />} />
